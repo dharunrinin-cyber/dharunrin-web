@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dharun | CSE Student Portfolio</title>
+
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    padding: 18px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #d8eaff;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #172033;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1976d2;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 20px 60px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(33, 150, 243, 0.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(100, 181, 246, 0.15),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    margin-bottom: 15px;
+
+    color: #172033;
+}
+
+.hero h1 span {
+    color: #1976d2;
+}
+
+.hero h2 {
+
+    font-size: 28px;
+
+    color: #40516b;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+
+    color: #5d6b82;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    margin-top: 35px;
+}
+
+.btn {
+
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    margin: 8px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: #1976d2;
+
+    border: 2px solid #1976d2;
+
+    transition: 0.3s;
+}
+
+.btn.primary {
+
+    background: #1976d2;
+
+    color: white;
+
+    border: 2px solid #1976d2;
+}
+
+.btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(25, 118, 210, 0.25);
+}
+
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 50px;
+
+    color: #172033;
+}
+
+.section-title span {
+    color: #1976d2;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about p {
+
+    color: #5d6b82;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-card {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #f4f9ff;
+
+    border: 1px solid #cfe5ff;
+
+    transition: 0.3s;
+}
+
+.education-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #1976d2;
+
+    box-shadow:
+        0 10px 30px rgba(25, 118, 210, 0.12);
+}
+
+.education-card h3 {
+
+    color: #1976d2;
+
+    margin-bottom: 10px;
+}
+
+.education-card p {
+
+    color: #5d6b82;
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 22px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.skill {
+
+    padding: 28px;
+
+    text-align: center;
+
+    background: #f4f9ff;
+
+    border-radius: 18px;
+
+    border: 1px solid #cfe5ff;
+
+    transition: 0.3s;
+}
+
+.skill:hover {
+
+    transform: translateY(-8px) scale(1.02);
+
+    border-color: #1976d2;
+
+    box-shadow:
+        0 10px 25px rgba(25, 118, 210, 0.12);
+}
+
+.skill h3 {
+
+    margin-bottom: 10px;
+
+    color: #172033;
+}
+
+.skill p {
+
+    color: #1976d2;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.project {
+
+    padding: 30px;
+
+    min-height: 220px;
+
+    border-radius: 20px;
+
+    background: #f4f9ff;
+
+    border: 1px solid #cfe5ff;
+
+    transition: 0.4s;
+}
+
+.project:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #1976d2;
+
+    box-shadow:
+        0 10px 30px rgba(25, 118, 210, 0.12);
+}
+
+.project h3 {
+
+    color: #1976d2;
+
+    margin-bottom: 15px;
+}
+
+.project p {
+
+    color: #5d6b82;
+}
+
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievement {
+
+    max-width: 850px;
+
+    margin: 15px auto;
+
+    padding: 20px;
+
+    background: #f4f9ff;
+
+    border-left: 4px solid #1976d2;
+
+    border-radius: 10px;
+
+    color: #40516b;
+
+    transition: 0.3s;
+}
+
+.achievement:hover {
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 5px 20px rgba(25, 118, 210, 0.10);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+
+    text-align: center;
+
+    background: #f4f9ff;
+}
+
+.contact p {
+
+    color: #40516b;
+
+    margin: 10px;
+
+    font-size: 17px;
+}
+
+.social-links {
+
+    margin-top: 25px;
+}
+
+.social-links a {
+
+    display: inline-block;
+
+    margin: 8px;
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    color: #1976d2;
+
+    text-decoration: none;
+
+    background: white;
+
+    border: 1px solid #cfe5ff;
+
+    transition: 0.3s;
+
+    font-weight: 500;
+}
+
+.social-links a:hover {
+
+    background: #1976d2;
+
+    color: white;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(25, 118, 210, 0.20);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #5d6b82;
+
+    border-top: 1px solid #cfe5ff;
+
+    background: white;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:700px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================
+   END CSS
+========================= */
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================
+     NAVIGATION
+================================== -->
+
+<nav>
+
+    <div class="logo">
+        Dharun.
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ==================================
+     HERO
+================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Hi, I'm <span>Dharun</span>
+        </h1>
+
+        <h2>
+            B.E. Computer Science & Engineering Student
+        </h2>
+
+        <p>
+
+            Passionate about technology, programming and innovation.
+            I enjoy learning new technologies and building meaningful
+            solutions through computer science.
+
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn primary">
+
+                View My Projects
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn">
+
+                Let's Connect
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     ABOUT
+================================== -->
+
+<section id="about">
+
+    <h2 class="section-title">
+
+        About <span>Me</span>
+
+    </h2>
+
+
+    <div class="about">
+
+        <p>
+
+            I am Dharun, a B.E. Computer Science and Engineering student.
+            I am interested in programming, technology and emerging
+            innovations. I continuously improve my technical skills by
+            learning, experimenting and working on new ideas.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     EDUCATION
+================================== -->
+
+<section id="education">
+
+    <h2 class="section-title">
+
+        My <span>Education</span>
+
+    </h2>
+
+
+    <div class="education-card">
+
+        <h3>
+
+            B.E. Computer Science and Engineering
+
+        </h3>
+
+
+        <p>
+
+            Shree Venkateshwara Hi-Tech Engineering College
+
+        </p>
+
+
+        <p>
+
+            Computer Science and Engineering
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     SKILLS
+================================== -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+
+        My <span>Skills</span>
+
+    </h2>
+
+
+    <div class="skills-container">
+
+
+        <div class="skill">
+
+            <h3>
+                🐍 Python
+            </h3>
+
+            <p>
+                Programming
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                ☕ Java
+            </h3>
+
+            <p>
+                Programming
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                🌐 HTML
+            </h3>
+
+            <p>
+                Web Development
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                💻 GitHub
+            </h3>
+
+            <p>
+                Version Control
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PROJECTS
+================================== -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+
+        Featured <span>Projects</span>
+
+    </h2>
+
+
+    <div class="project-container">
+
+
+        <div class="project">
+
+            <h3>
+                🚀 AI Project
+            </h3>
+
+            <p>
+
+                An AI-based project focused on using intelligent
+                technology to solve real-world problems.
+
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>
+                💻 Web Development
+            </h3>
+
+            <p>
+
+                Building responsive and user-friendly web pages
+                using HTML and modern web design concepts.
+
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>
+                🔐 Technology Project
+            </h3>
+
+            <p>
+
+                Exploring innovative technology solutions with
+                programming and computer science concepts.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     ACHIEVEMENTS
+================================== -->
+
+<section>
+
+    <h2 class="section-title">
+
+        <span>Achievements</span>
+
+    </h2>
+
+
+    <div class="achievement">
+
+        🎓 Computer Science and Engineering Student
+
+    </div>
+
+
+    <div class="achievement">
+
+        💡 Interested in AI, Technology and Innovation
+
+    </div>
+
+
+    <div class="achievement">
+
+        🚀 Continuously learning and building new projects
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     CONTACT
+================================== -->
+
+<section id="contact" class="contact">
+
+    <h2 class="section-title">
+
+        Let's <span>Connect</span>
+
+    </h2>
+
+
+    <p>
+
+        📧 dharunrin.in@gmail.com
+
+    </p>
+
+
+    <div class="social-links">
+
+
+        <!-- LINKEDIN -->
+
+        <a
+            href="https://www.linkedin.com/in/dharun-rin-b519433b3?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            🔗 LinkedIn
+
+        </a>
+
+
+        <!-- GITHUB -->
+
+        <a
+            href="https://github.com/DharunSuthakar"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            💻 GitHub
+
+        </a>
+
+
+        <!-- EMAIL -->
+
+        <a
+            href="mailto:dharunrin.in@gmail.com">
+
+            📧 Email Me
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+    © 2026 Dharun. Built with passion and technology.
+
+</footer>
+
+
+</body>
+
+</html>
